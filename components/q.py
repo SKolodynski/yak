@@ -167,7 +167,7 @@ class QComponentConfiguration(ComponentConfiguration):
             cmd += " -w {0:d}".format(self.mem_cap)
 
         if self.u_opt:
-            cmd += " -{0} {1}".format(self.u_opt, self.u_file)
+            cmd += " -{0} {1}".format(self.u_opt, os.path.normpath(self.u_file))
 
         return cmd
 
