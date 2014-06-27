@@ -194,7 +194,7 @@ class Component(object):
         """Returns true if component is alive, false otherwise"""
         if self.pid and osutil.is_alive(int(self.pid)):
             cmd = shlex.split(str(self.executed_cmd), posix = False)
-            proc_cmd = self.proc_cmd
+            proc_cmd = self.proc_cmd()
             return not proc_cmd or not cmd or proc_cmd == cmd
         else:
             return False
